@@ -15,7 +15,6 @@
         <button class="btn btn-default" v-on:click="removeTask(todo)">
           <span class="glyphicon glyphicon-remove"></span>
         </button>
-         <VueUploadcare :url.sync="photoUrl"></VueUploadcare>
         <button class="btn btn-default" @click="completed(todo)">
           <span class="glyphicon glyphicon-ok"></span>
         </button>
