@@ -1,0 +1,23 @@
+body {
+  background-image: url(../src/autumn-background-board-220116.jpg);
+  background-size: 100%;
+  font-family: 'Montserrat';
+  color: #F29400;
+}
+
+.json-output {
+  font-family: 'Montserrat';
+  color: #F29400;
+}
+
+.todo-app {
+  height: relative;
+  width: 600px;
+  position: relative;
+}
+
+.footer {
+  height: relative;
+  width: 600px;
+  position: relative;
+}
