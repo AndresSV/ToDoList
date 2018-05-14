@@ -5,7 +5,7 @@
         <strong><i>ToDo List - FDI</i></strong>
       </h1>
     </center>
-    <input class="form-control" v-model="newTodo" v-on:keyup.enter="addTodo(todo)">
+    <input class="form-control" v-model="newTodo" v-on:keyup.enter="addTask(todo)">
     <h2>
       <i> ToDo </i>
     </h2>
@@ -15,6 +15,7 @@
         <button class="btn btn-default" v-on:click="removeTask(todo)">
           <span class="glyphicon glyphicon-remove"></span>
         </button>
+         <VueUploadcare :url.sync="photoUrl"></VueUploadcare>
         <button class="btn btn-default" @click="completed(todo)">
           <span class="glyphicon glyphicon-ok"></span>
         </button>
@@ -72,7 +73,7 @@ export default {
       return ! this.isCompleted(todo);
     },
 
-    addTodo(todo) {
+    addTask(todo) {
       let text = this.newTodo.trim();
       this.todos.push({
         task: text,
@@ -80,7 +81,10 @@ export default {
       });
       this.newTodo = '';
     },
-
+    editTodo(todo) {
+      this.removeTodo(todo);
+      this.newTask = todo.task;
+    },
     removeTask(todo) {
       this.todos.$remove(todo);
     },
